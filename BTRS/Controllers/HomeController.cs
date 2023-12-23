@@ -22,7 +22,7 @@ namespace BTRS.Controllers
         {
             return View();
         }
-
+        // comment
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
