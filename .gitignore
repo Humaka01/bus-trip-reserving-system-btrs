@@ -1,0 +1,12 @@
+# Ignore Visual Studio Code settings
+.vscode/*
+
+# Ignore Visual Studio settings
+.vs/*
+
+# Ignore build output in the BTRS directory
+BTRS/obj/*
+
+# Ignore specific files in the BTRS directory
+BTRS/appsettings.json
+BTRS/appsettings.Development.json
