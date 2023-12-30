@@ -10,6 +10,7 @@ namespace BTRS.Models
     public class Trip
     {
         [Key]
+       
         public int TripID { get; set; }
 
         [Required]
@@ -23,6 +24,12 @@ namespace BTRS.Models
 
         [Required]
         public int BusNumber { get; set; }
+
+        [ForeignKey("AdminID")]
+        public Admin Admin { get; set; }
+
+
+        public int? SelectedSeats { get; set; }
 
         // Navigation properties
         public ICollection<Bus> Buses { get; set; }

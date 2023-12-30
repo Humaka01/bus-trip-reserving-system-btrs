@@ -1,0 +1,24 @@
+﻿@model BTRS.Models.Trip
+
+<h1>Bus Details for Trip</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bus ID</th>
+            <th>Captain Name</th>
+            <th>Number of Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bus in Model.Buses)
+        {
+            <tr>
+                <td>@bus.BusID</td>
+                <td>@bus.CaptainName</td>
+                <td>@bus.NumOfSeats</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="MyBookings">My Bookings</a>

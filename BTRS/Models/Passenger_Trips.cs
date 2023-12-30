@@ -8,11 +8,9 @@ namespace BTRS.Models
         [Key]
         public int ID { set; get; }
         [ForeignKey("PassengerID")]
-        public int PassengerID { get; set; }
+        public Passenger passenger { get; set; }
 
         [ForeignKey("TripID")]
-        public int TripID { get; set; }
-
         public Trip trip { get; set; }  
     }
 }

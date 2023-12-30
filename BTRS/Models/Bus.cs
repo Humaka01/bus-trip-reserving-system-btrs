@@ -10,8 +10,11 @@ namespace BTRS.Models
         [Required]
         public string CaptainName { get; set; }
         [Required]
-        public int NumOfSeats { get; set; } 
+        public int NumOfSeats { get; set; }
+
+        [ForeignKey("TripID")]
+        public Trip trip { get; set; }
       
-        public  ICollection<Trip> Trips { get; set; }
+        
     }
 }

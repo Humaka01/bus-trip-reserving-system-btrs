@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BTRS.Models.Trip>
+
+<p>
+    <a asp-action="Create">Add a Trip</a>
+    <a asp-action="Index" asp-controller="Buses">Add Bus</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TripID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TripID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TripID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -2,7 +2,7 @@
 using BTRS.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FootballGame.Date
+namespace BTRS.Data
 {
     public class SystemDbContext : DbContext
     {
@@ -17,9 +17,6 @@ namespace FootballGame.Date
         public DbSet<Booking> booking { set; get; }
         public DbSet<Bus> bus { set; get; }
         public DbSet<Passenger_Trips> passenger_trips { set; get; }
-     
-
-
-
+        public object Passenger_Trips { get; internal set; }
     }
 }

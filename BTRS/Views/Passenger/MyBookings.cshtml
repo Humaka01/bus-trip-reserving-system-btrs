@@ -1,19 +1,9 @@
 ﻿@model IEnumerable<BTRS.Models.Trip>
 
-<h1>Available Trips</h1>
-
-<div class="container">
-    <a asp-action="Logout" asp-controller="Passenger">
-        <button>Logout</button>
-    </a>
-</div>
-
+<h1>My Bookings</h1>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TripID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Destination)
             </th>
@@ -26,6 +16,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.BusNumber)
             </th>
+            <th>
+                @Html.DisplayName("Selected Seats")
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -33,9 +26,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TripID)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Destination)
                 </td>
@@ -49,11 +39,20 @@
                     @Html.DisplayFor(modelItem => item.BusNumber)
                 </td>
                 <td>
-                    <a asp-action="BookTrip" asp-route-id="@item.TripID">Book</a>
-                    <a asp-action="ViewBusDetails" asp-route-id="@item.TripID">View Bus Details</a>
+                    <!-- Display the number of seats chosen by the passenger -->
+                    @if (item.SelectedSeats.HasValue)
+                    {
+                        @Html.DisplayFor(modelItem => item.SelectedSeats)
+                    }
+                    else
+                    {
+                        <span>No seats selected</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="CancelBooking" asp-route-id="@item.TripID">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<a asp-action="MyBookings">My Bookings</a>

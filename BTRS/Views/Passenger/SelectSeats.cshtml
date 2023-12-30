@@ -1,0 +1,16 @@
+﻿<!-- SelectSeats.cshtml -->
+@model BTRS.Models.Trip
+
+<h1>Select Seats</h1>
+<p>Available Seats: @Model.Buses.Sum(b => b.NumOfSeats)</p>
+
+<form asp-action="ConfirmBooking" asp-route-tripId="@Model.TripID" method="post">
+    <label for="SelectedSeats">Number of Seats:</label>
+    <input type="number" name="SelectedSeats" min="1" max="@Model.Buses.Sum(b => b.NumOfSeats)" required />
+    <br />
+    <input type="submit" value="Confirm Booking" />
+</form>
+
+<p>
+    <a asp-action="MyBookings">Cancel</a> <!-- Add a cancel link to go back to MyBookings page -->
+</p>
