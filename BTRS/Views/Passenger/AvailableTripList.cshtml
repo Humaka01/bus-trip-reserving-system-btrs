@@ -21,9 +21,11 @@
                             <p class="card-text"><strong>Departure Date:</strong> @item.StartDate.ToShortDateString()</p>
                                 <p class="card-text"><strong>Return Date:</strong> @item.EndDate.ToShortDateString()</p>
                             <p class="card-text"><strong>Bus Number:</strong> @item.BusNumber</p>
-                            <a asp-action="BookTrip" asp-route-id="@item.TripID" class="btn btn-secondary">Book</a>
-                            <a asp-action="ViewBusDetails" asp-route-id="@item.TripID" class="btn btn-secondary">View Bus Details</a>
-                        </div>
+                            <div class="button-group mt-3">
+                                <a asp-action="BookTrip" asp-route-id="@item.TripID" class="btn btn-secondary">Book</a>
+                                <a asp-action="ViewBusDetails" asp-route-id="@item.TripID" class="btn btn-secondary">View Bus Details</a>
+                            </div>
+                         </div>
                     </div>
                 </div>
         }

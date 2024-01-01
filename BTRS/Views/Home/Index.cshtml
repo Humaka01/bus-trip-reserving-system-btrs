@@ -5,7 +5,7 @@
 <div class="container home-page-container">
     <div class="welcome-message">
         <h1>Welcome to ABC Bus Travels</h1>
-        <p>Your Journey Awaits</p>
+        <p>Adventure Awaits, So Does You!</p>
     </div>
 </div>
 
@@ -20,6 +20,12 @@
         <div class="destination-title">Dead Sea</div>
     </div>
 
+    <div class="book-now-container">
+        <a asp-action="Login" asp-controller="Passenger" class="book-button">
+            <img id="enter-image" src="~/images/enter-site.png" alt="Enter Site">
+        </a>
+    </div>
+
     <div class="hovercard">
         <img src="~/images/petra.png" alt="Petra" class="destination-image">
         <div class="destination-title">Petra</div>
@@ -31,8 +37,3 @@
     </div>
 </div>
 
-<div class="book-now-container">
-    <a asp-action="Login" asp-controller="Passenger" class="book-button">
-        Book Now!
-    </a>
-</div>

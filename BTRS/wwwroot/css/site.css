@@ -33,19 +33,7 @@ body {
 
 .booking-card {
     position: relative;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s, transform 0.3s;
-    display: relative;
 }
-
-    .booking-card:hover {
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        transform: scale(1.015);
-    }
 
 #booking-title, #bus-details-title {
     font-size: 34px;
@@ -57,31 +45,26 @@ body {
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* Style for booking details */
 .booking-detail {
     font-size: 16px;
     font-family: 'Helvetica Neue', sans-serif;
     margin: 5px 0;
-    color: #333;
+    color: #3b260d;
     font-weight: bold;
 }
 
-/* Style for highlighted data */
 .data-highlight {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 0;
     font-weight: bold;
-    color: #0d6efd;
+    color: #634118;
 }
 
-/* Style for cancel button */
 .cancel-btn {
     background-color: #ff4d4f;
     color: white;
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 14px;
+    font-weight:bold;
     transition: background-color 0.3s, transform 0.3s;
     position: absolute;
     top: 10px;
@@ -189,20 +172,19 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding: 20px; /* Adjust as needed */
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
 }
 
 .hovercard {
-    /*background-color: rgba(255, 255, 255, 0.8);*/
     border-radius: 8px;
     padding: 20px;
-    width: calc(25% - 20px); /* 25% width for each hovercard with some spacing */
+    width: calc(25% - 20px);
     text-align: center;
     transition: transform 0.2s ease-in-out;
 }
-
-    /* Hover effect for the hovercards */
     .hovercard:hover {
         transform: scale(1.05);
     }
@@ -220,8 +202,9 @@ body {
     font-size: 22px;
     font-weight: bold;
     margin-top: 10px;
-    color: #fff581;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    color: #e9cca6;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+    -webkit-text-stroke: 2px #0302021e;
     padding: 5px 10px;
 }
 
@@ -234,59 +217,38 @@ body {
 }
 
 .welcome-message h1 {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     color: #e9cca6;
+    -webkit-text-stroke: 1px #0302021e;
 }
 
 .welcome-message p {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     color: #e9cca6;
-    animation: subtle-animation 4s infinite;
-}
-
-@keyframes subtle-animation {
-    0%, 100% {
-        opacity: 1;
-        font-size: 20px;
-    }
-
-    50% {
-        opacity: 0.90;
-        font-size: 20.2px;
-    }
-}
-
-.book-button {
-    display: inline-block;
-    background-color: #8b735b;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-family: 'Helvetica Neue', sans-serif;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s, font-size 0.3s;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transform: perspective(1px) translateZ(0);
-}
-
-.book-button:hover {
-    background-color: #7a654d;
-    transform: scale(1.05) translateZ(0);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    font-size: 19px;
+    -webkit-text-stroke: 1px #0302021e;
 }
 
 .book-now-container {
-    text-align: center;
+    display: flex;
 }
+
+#enter-image {
+    width: 15vw;
+    height: auto;
+    margin-bottom: 50px;
+    transition: transform 0.3s;
+    transform: perspective(1px) translateZ(0);
+}
+
+    #enter-image:hover {
+        transform: scale(1.2) translateZ(0);
+    }
 
 .login-form {
     background-color: rgba(255, 255, 255, 0.8);
@@ -319,7 +281,7 @@ body {
     }
 
     .login-form button {
-        background-color: #8b735b; /* Sandy color */
+        background-color: #8b735b;
         color: #fff;
         padding: 12px 30px;
         border: none;
@@ -331,18 +293,18 @@ body {
     }
 
         .login-form button:hover {
-            background-color: #7a654d; /* Darker sandy color on hover */
+            background-color: #7a654d;
             transform: scale(1.05);
         }
 
     .login-form p {
         font-size: 16px;
         margin-top: 20px;
-        color: #3b260d; /* Dark brown text color */
+        color: #3b260d;
     }
 
     .login-form a {
-        color: #8b735b; /* Sandy color for the signup link */
+        color: #8b735b;
         font-weight: bold;
     }
 
@@ -360,7 +322,7 @@ body {
         transform: scale(1.015);
     }
 
-.card {
+.card, .booking-card {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
     padding: 20px;
@@ -368,21 +330,21 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s, transform 0.3s;
 }
-    .card:hover {
+    .card:hover, .booking-card:hover {
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         transform: scale(1.015);
     }
 
-.card-title {
-    color: #482e10;
-}
-
-.card-text {
+.card-title, h2.booking-header {
     color: #3b260d;
 }
 
 .trip-card {
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.card-text {
+    color: #3b260d;
 }
 
 .trip-card h5.card-title {
@@ -392,12 +354,12 @@ body {
     margin-top: 10px;
 }
 
-.trip-card p.card-text {
-    font-size: 16px;
-    font-weight: bold;
-    color: #3b260d;
-    margin-top: 5px;
-}
+    .trip-card p.card-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #3b260d;
+        margin-top: 5px;
+    }
 
 .trip-card a.btn {
     background-color: #8b735b;
@@ -415,16 +377,6 @@ body {
     .trip-card a.btn:hover {
         background-color: #7a654d;
         transform: scale(1.05);
-    }
-
-.trip-card a.btn-secondary {
-    background-color: #28a745;
-    color: white;
-    margin-right: 10px;
-}
-
-    .trip-card a.btn-secondary:hover {
-        background-color: #218838;
     }
 
 .container.trip-container {
@@ -486,4 +438,9 @@ body {
     color: #3b260d;
     margin-bottom: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
 }
