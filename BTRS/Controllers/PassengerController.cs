@@ -36,7 +36,13 @@ namespace BTRS.Controllers
                     _context.passenger.Add(passenger);
                     _context.SaveChanges();
 
-                    //TempData["Msg"] = "The data was saved";
+                    // Retrieve the newly generated PassengerID
+                    int passengerID = passenger.PassengerID;
+
+                    // Set the PassengerID in the session
+                    HttpContext.Session.SetInt32("PassengerID", passengerID);
+
+                    // Redirect to the available trips page
                     return RedirectToAction("AvailableTripList");
                 }
                 else
@@ -51,6 +57,7 @@ namespace BTRS.Controllers
                 return View();
             }
         }
+
 
         public bool CheckUsername(string username)
         {
@@ -126,7 +133,6 @@ namespace BTRS.Controllers
            
         }
 
-
         public IActionResult Logout()
         {
             // Clear the session
@@ -138,10 +144,13 @@ namespace BTRS.Controllers
 
 
 
+
+
+
         [HttpGet]
         public IActionResult AvailableTripList()
         {
-            int userID = (int)HttpContext.Session.GetInt32("PassengerID");
+            int? userID = (int)HttpContext.Session.GetInt32("PassengerID");
            List<int> lst = _context.passenger_trips.Where(
                 t=>t.passenger.PassengerID ==userID).Select(s=>s.trip.TripID).ToList();
 

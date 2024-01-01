@@ -1,58 +1,44 @@
 ﻿@model IEnumerable<BTRS.Models.Trip>
 
-<h1>My Bookings</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Destination)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BusNumber)
-            </th>
-            <th>
-                @Html.DisplayName("Selected Seats")
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Destination)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BusNumber)
-                </td>
-                <td>
-                    <!-- Display the number of seats chosen by the passenger -->
-                    @if (item.SelectedSeats.HasValue)
-                    {
-                        @Html.DisplayFor(modelItem => item.SelectedSeats)
-                    }
-                    else
-                    {
-                        <span>No seats selected</span>
-                    }
-                </td>
-                <td>
-                    <a asp-action="CancelBooking" asp-route-id="@item.TripID">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<h1 id="booking-title">My Bookings</h1>
+
+<div class="container">
+    <div class="button-container">
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </div>
+</div>
+
+<div class="container" id="booking-container">
+    @foreach (var item in Model)
+    {
+            <div class="booking-card">
+                <h2 class="booking-header">Trip to @item.Destination</h2>
+                <a asp-action="CancelBooking" asp-route-id="@item.TripID" class="cancel-btn">Cancel Booking</a>
+                <div class="booking-detail date-detail">
+                    <strong>Departure Date: <span class="data-highlight">@item.StartDate.ToShortDateString()</span></strong>
+                </div>
+                <div class="booking-detail date-detail">
+                    <strong>Return Date: <span class="data-highlight">@item.EndDate.ToShortDateString()</span></strong>
+                </div>
+                <div class="booking-detail bus-number">
+                    <strong>Bus Number: <span class="data-highlight">@item.BusNumber</span></strong>
+                </div>
+                <div class="booking-detail seats-detail">
+                    <strong>Reserved Seats: <span class="data-highlight">
+                        @if (item.SelectedSeats.HasValue)
+                        {
+                            @item.SelectedSeats
+                        }
+                        else
+                        {
+                            <span class="no-seats">No seats Available</span>
+                        }
+                    </span></strong>
+                </div>
+            </div>
+    }
+</div>
+
+<div class="footer-links">
+    <a asp-action="AvailableTripList" class="btn btn-secondary" id="back-button"><span>Go Back</span></a>
+</div>

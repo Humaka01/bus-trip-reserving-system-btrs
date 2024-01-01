@@ -1,59 +1,30 @@
 ﻿@model IEnumerable<BTRS.Models.Trip>
 
-<h1>Available Trips</h1>
+<h1 id="booking-title">Available Trips</h1>
 
 <div class="container">
-    <a asp-action="Logout" asp-controller="Passenger">
-        <button>Logout</button>
-    </a>
+    <div class="button-container">
+        <a asp-action="MyBookings" class="btn btn-secondary" id="my-bookings-button"><span>My Bookings</span></a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TripID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destination)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BusNumber)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <div class="row">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TripID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Destination)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BusNumber)
-                </td>
-                <td>
-                    <a asp-action="BookTrip" asp-route-id="@item.TripID">Book</a>
-                    <a asp-action="ViewBusDetails" asp-route-id="@item.TripID">View Bus Details</a>
-                </td>
-            </tr>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Destination</h5>
+                            <p class="card-text"><strong>Start Date:</strong> @item.StartDate.ToShortDateString()</p>
+                            <p class="card-text"><strong>End Date:</strong> @item.EndDate.ToShortDateString()</p>
+                            <p class="card-text"><strong>Bus Number:</strong> @item.BusNumber</p>
+                            <a asp-action="BookTrip" asp-route-id="@item.TripID" class="btn btn-secondary">Book</a>
+                            <a asp-action="ViewBusDetails" asp-route-id="@item.TripID" class="btn btn-secondary">View Bus Details</a>
+                        </div>
+                    </div>
+                </div>
         }
-    </tbody>
-</table>
-<a asp-action="MyBookings">My Bookings</a>
+    </div>
+</div>

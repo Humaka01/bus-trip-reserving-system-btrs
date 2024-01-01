@@ -2,9 +2,37 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-    <h1>Welcome to ABC Bus Travels</h1>
-    <a asp-action="Login" asp-controller="Passenger">
-        <button>Join Now</button>
+<div class="container home-page-container">
+    <div class="welcome-message">
+        <h1>Welcome to ABC Bus Travels</h1>
+        <p>Your Journey Awaits</p>
+    </div>
+</div>
+
+<div class="container hovercard-container">
+    <div class="hovercard">
+        <img src="~/images/aqaba.png" alt="Aqaba" class="destination-image">
+        <div class="destination-title">Aqaba</div>
+    </div>
+
+    <div class="hovercard">
+        <img src="~/images/dead-sea.png" alt="Dead Sea" class="destination-image">
+        <div class="destination-title">Dead Sea</div>
+    </div>
+
+    <div class="hovercard">
+        <img src="~/images/petra.png" alt="Petra" class="destination-image">
+        <div class="destination-title">Petra</div>
+    </div>
+
+    <div class="hovercard">
+        <img src="~/images/wadi-rum.png" alt="Wadi Rum" class="destination-image">
+        <div class="destination-title">Wadi Rum</div>
+    </div>
+</div>
+
+<div class="book-now-container">
+    <a asp-action="Login" asp-controller="Passenger" class="book-button">
+        Book Now!
     </a>
 </div>
