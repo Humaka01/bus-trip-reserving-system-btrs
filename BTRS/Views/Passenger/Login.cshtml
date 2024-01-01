@@ -1,10 +1,7 @@
 ﻿@model BTRS.Models.Login;
 
-
-
-<div class="container">
+<div class="container login-form">
     <h1>Login</h1>
-
     <form asp-action="Login" method="post">
         <div class="form-group">
             <label asp-for="username">Username:</label>
@@ -24,5 +21,3 @@
     <p>Don't have an account? <a asp-action="SignUp">Sign up here.</a></p>
 </div>
 @TempData["Msg"]
-
-

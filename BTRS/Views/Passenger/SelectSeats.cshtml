@@ -4,6 +4,14 @@
 <h1>Select Seats</h1>
 <p>Available Seats: @Model.Buses.Sum(b => b.NumOfSeats)</p>
 
+<div class="container">
+    <div class="button-container">
+        <a asp-action="AvailableTripList" class="btn btn-secondary">Trips</a>
+        <a asp-action="MyBookings" class="btn btn-secondary" id="my-bookings-button"><span>My Bookings</span></a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </div>
+</div>
+
 <form asp-action="ConfirmBooking" asp-route-tripId="@Model.TripID" method="post">
     <label for="SelectedSeats">Number of Seats:</label>
     <input type="number" name="SelectedSeats" min="1" max="@Model.Buses.Sum(b => b.NumOfSeats)" required />

@@ -47,14 +47,14 @@ body {
         transform: scale(1.015);
     }
 
-/* Style for booking title */
-#booking-title {
-    font-size: 32px;
+#booking-title, #bus-details-title {
+    font-size: 34px;
     font-weight: bold;
-    color: black;
+    color: #4d3612;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-family: 'Helvetica Neue', sans-serif;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 /* Style for booking details */
@@ -96,32 +96,31 @@ body {
         color: white;
     }
 
-/* Style for footer links */
 .footer-links {
     text-align: center;
     margin-top: 40px;
 }
 
-/* Style for secondary buttons */
 .btn-secondary {
-    background-color: #28a745;
+    background-color: #8b735b;
     color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 8px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
-
     .btn-secondary:hover {
-        background-color: #218838;
+        background-color: #7a654d;
         transform: scale(1.05);
-        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
     }
 
-/* Style for indicating no seats available */
 .no-seats {
     color: #dc3545;
 }
@@ -159,6 +158,9 @@ body {
 }
 
 .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -180,27 +182,8 @@ body {
 
     #logout-button:hover {
         background-color: #cc0000;
+        transform: scale(1.05);
     }
-
-#my-bookings-button {
-    background-color: #28a745;
-    color: white;
-    padding: 8px 13px;
-    border-radius: 5px;
-    border:0px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    margin-top:-3px;
-}
-
-#my-bookings-button:hover {
-    background-color: #218838;
-    transform: scale(1.05);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
-}
 
 .hovercard-container {
     display: flex;
@@ -303,4 +286,151 @@ body {
 
 .book-now-container {
     text-align: center;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+    .login-form h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #8b735b;
+    }
+
+    .login-form label {
+        font-weight: bold;
+        color: #3b260d;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login-form button {
+        background-color: #8b735b; /* Sandy color */
+        color: #fff;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+        .login-form button:hover {
+            background-color: #7a654d; /* Darker sandy color on hover */
+            transform: scale(1.05);
+        }
+
+    .login-form p {
+        font-size: 16px;
+        margin-top: 20px;
+        color: #3b260d; /* Dark brown text color */
+    }
+
+    .login-form a {
+        color: #8b735b; /* Sandy color for the signup link */
+        font-weight: bold;
+    }
+
+.trip-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+    .trip-card:hover {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        transform: scale(1.015);
+    }
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+    .card:hover {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.015);
+    }
+
+.card-title {
+    color: #482e10;
+}
+
+.card-text {
+    color: #3b260d;
+}
+
+.trip-card {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.trip-card h5.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b735b;
+    margin-top: 10px;
+}
+
+.trip-card p.card-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3b260d;
+    margin-top: 5px;
+}
+
+.trip-card a.btn {
+    background-color: #8b735b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+    .trip-card a.btn:hover {
+        background-color: #7a654d;
+        transform: scale(1.05);
+    }
+
+.trip-card a.btn-secondary {
+    background-color: #28a745;
+    color: white;
+    margin-right: 10px;
+}
+
+    .trip-card a.btn-secondary:hover {
+        background-color: #218838;
+    }
+
+.container.trip-container {
+    margin-top: 20px;
+}
+
+.card-body a.btn-secondary + a.btn-secondary {
+    margin-left: 10px;
 }

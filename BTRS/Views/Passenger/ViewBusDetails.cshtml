@@ -1,24 +1,28 @@
 ﻿@model BTRS.Models.Trip
 
-<h1>Bus Details for Trip</h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Bus ID</th>
-            <th>Captain Name</th>
-            <th>Number of Seats</th>
-        </tr>
-    </thead>
-    <tbody>
+<h1 id="bus-details-title">Bus Details for Trip</h1>
+
+<div class="container">
+    <div class="button-container">
+        <a asp-action="AvailableTripList" class="btn btn-secondary">Trips</a>
+        <a asp-action="MyBookings" class="btn btn-secondary" id="my-bookings-button"><span>My Bookings</span></a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
         @foreach (var bus in Model.Buses)
         {
-            <tr>
-                <td>@bus.BusID</td>
-                <td>@bus.CaptainName</td>
-                <td>@bus.NumOfSeats</td>
-            </tr>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bus ID: @bus.BusID</h5>
+                            <p class="card-text">Captain Name: @bus.CaptainName</p>
+                            <p class="card-text">Number of Seats: @bus.NumOfSeats</p>
+                        </div>
+                    </div>
+                </div>
         }
-    </tbody>
-</table>
-
-<a asp-action="MyBookings">My Bookings</a>
+    </div>
+</div>
