@@ -296,7 +296,7 @@ body {
     transform: scale(1.05) translateZ(0);
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
     color: #fff;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .book-now-container {
