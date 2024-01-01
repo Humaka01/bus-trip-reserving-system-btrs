@@ -1,24 +1,26 @@
-﻿<!-- SelectSeats.cshtml -->
-@model BTRS.Models.Trip
+﻿@model BTRS.Models.Trip
 
-<h1>Select Seats</h1>
-<p>Available Seats: @Model.Buses.Sum(b => b.NumOfSeats)</p>
+@{
+    int availableSeats = Model.Buses.Sum(b => b.NumOfSeats);
+}
+
+<h1 id="booking-title">Select Seats</h1>
 
 <div class="container">
     <div class="button-container">
-        <a asp-action="AvailableTripList" class="btn btn-secondary">Trips</a>
+        <a asp-action="AvailableTripList" class="btn btn-secondary trips-button">Trips</a>
         <a asp-action="MyBookings" class="btn btn-secondary" id="my-bookings-button"><span>My Bookings</span></a>
         <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
     </div>
 </div>
 
-<form asp-action="ConfirmBooking" asp-route-tripId="@Model.TripID" method="post">
-    <label for="SelectedSeats">Number of Seats:</label>
-    <input type="number" name="SelectedSeats" min="1" max="@Model.Buses.Sum(b => b.NumOfSeats)" required />
+<form asp-action="ConfirmBooking" asp-route-tripId="@Model.TripID" method="post" class="booking-form">
+    <p class="available-seats">Available Seats: @availableSeats</p>
+    <label for="SelectedSeats" id="number-of-seats">Number of Seats:</label>
+    <input type="number" name="SelectedSeats" min="1" max="@availableSeats" required class="seat-input" />
     <br />
-    <input type="submit" value="Confirm Booking" />
+    <div id="select-seats-button-div">
+        <a asp-action="MyBookings" class="btn btn-secondary cancel-button">Cancel</a>
+        <input type="submit" value="Confirm Booking" class="btn btn-secondary" />
+    </div>
 </form>
-
-<p>
-    <a asp-action="MyBookings">Cancel</a> <!-- Add a cancel link to go back to MyBookings page -->
-</p>
