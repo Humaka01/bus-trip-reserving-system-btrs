@@ -4,7 +4,7 @@
 
 ## Overview
 
-BTRS is a university project developed for the ASP\.NET course at Applied Science University. It is a web application designed to facilitate seamless booking for passengers and secure administration for ABC Bus Travels.
+BTRS is a university project developed for the ASP\.NET course at Applied Science Private University. It is a web application designed to facilitate seamless booking for passengers and secure administration for ABC Bus Travels.
 
 ## Key Features
 
@@ -16,23 +16,33 @@ BTRS is a university project developed for the ASP\.NET course at Applied Scienc
 ## Technologies Used
 
 - ASP\.NET Core MVC
-- SQL Server Management Studio
+- Microsoft SQL Server Management Studio
+- Microsoft Visual Studio Studio
 - Entity Framework Core
 - HTML Helpers with Bootstrap for styling
 
 ## Project Structure
 
 - [/BTRS](/BTRS): ASP\.NET Core MVC Project
-- [/docs](/docs): Project documentation, including the PowerPoint presentation.
+- [/docs](/docs): Project documentation.
 
 ## Getting Started
 
-1. Clone the repository: `git clone [repository_link]`
-2. Set up the SQL Server database named "BTRS" using the scripts in the [/database](/database) folder.
-3. Open the project in Visual Studio or your preferred IDE.
-4. Configure the database connection in `appsettings.json`.
-5. Ensure SQL Server Management Studio is installed for database management.
-6. Run the application.
+To set up and run this project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Open the project Visual Studio.
+3. Configure the database connection by editing the `appsettings.json` file and adding your connection string.
+4. In SQL Server Management Studio, create a new database named `BTRS`.
+5. In your Visual Studio, open the NuGet Package Manager Console and run the following command to apply the database migrations:
+
+```sql
+update-database
+```
+
+6. Build and run the application to start using it.
+
+- With these steps, you'll have the project set up and running locally on your machine.
 
 ## Task Management
 
