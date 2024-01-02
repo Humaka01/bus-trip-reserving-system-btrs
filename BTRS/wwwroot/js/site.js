@@ -1,5 +1,5 @@
 ﻿const audio = document.getElementById("background-audio");
-audio.volume = 0.4;
+audio.volume = 0.0;
 
 function playAudioWithRandomStart() {
     const maxDuration = audio.duration;

@@ -1,9 +1,17 @@
 ﻿@model IEnumerable<BTRS.Models.Trip>
 
-<p>
-    <a asp-action="Create">Add a Trip</a>
-    <a asp-action="Index" asp-controller="Buses">Add Bus</a>
-</p>
+<div class="button-container">
+    <p>
+        <a asp-action="Index" asp-controller="Trips" class="btn btn-secondary">Trips</a>
+        <a asp-action="Index" asp-controller="Buses" class="btn btn-secondary">Buses</a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </p>
+</div>
+
+<div class="admin-trip-buttons">
+    <a asp-action="Create" class="btn btn-secondary">Create New Trip</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>

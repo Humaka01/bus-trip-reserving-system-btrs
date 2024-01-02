@@ -1,36 +1,30 @@
 ﻿@model BTRS.Models.Trip
 
-<div>
-    <h4>Trip</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Destination)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Destination)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BusNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BusNumber)
-        </dd>
-    </dl>
+<div class="button-container">
+    <p>
+        <a asp-action="Index" asp-controller="Trips" class="btn btn-secondary">Trips</a>
+        <a asp-action="Index" asp-controller="Buses" class="btn btn-secondary">Buses</a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </p>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.TripID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+    <div class="trip-details">
+        <dl class="row">
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Destination)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Destination)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.StartDate)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.StartDate)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.EndDate)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.EndDate)</dd>
+
+            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BusNumber)</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.BusNumber)</dd>
+        </dl>
+    </div>
+
+    <div class="trip-actions">
+        <a asp-action="Edit" asp-route-id="@Model?.TripID" class="btn btn-secondary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>

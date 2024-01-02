@@ -4,51 +4,55 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="button-container">
+    <p>
+        <a asp-action="Index" asp-controller="Trips" class="btn btn-secondary">Trips</a>
+        <a asp-action="Index" asp-controller="Buses" class="btn btn-secondary">Buses</a>
+        <a asp-action="Logout" asp-controller="Passenger" id="logout-button">Logout</a>
+    </p>
+</div>
 
-<h4>Bus</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" class="booking-form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="BusID" />
             <div class="form-group">
-                <label asp-for="CaptainName" class="control-label"></label>
-                <input asp-for="CaptainName" class="form-control" />
+                <label asp-for="CaptainName" class="control-label">Captain Name</label>
+                <input asp-for="CaptainName" class="form-control modern-input" placeholder="Enter Captain Name" />
                 <span asp-validation-for="CaptainName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NumOfSeats" class="control-label"></label>
-                <input asp-for="NumOfSeats" class="form-control" />
+                <label asp-for="NumOfSeats" class="control-label">Number of Seats</label>
+                <input asp-for="NumOfSeats" class="form-control modern-input" placeholder="Enter Number of Seats" />
                 <span asp-validation-for="NumOfSeats" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label"> TripID</label>
+                <label class="control-label">Select Trip</label>
 
-                <select name="tripID" id="tripID" class="form-control">
+                <select name="tripID" id="tripID" class="form-control modern-select" style="margin-bottom: 15px">
                     @foreach (var trip in ViewBag.Trips)
                     {
-                        <option value="@trip.TripID">
+                            <option value="@trip.TripID">
                             @trip.Destination
-                            (@trip.StartDate.ToShortDateString() - @trip.EndDate.ToShortDateString())
-                        </option>
+                                (@trip.StartDate.ToShortDateString() - @trip.EndDate.ToShortDateString())
+                            </option>
                     }
                 </select>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group modern-buttons">
+                <input type="submit" value="Save" class="btn btn-primary modern-button" />
             </div>
-
-
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary modern-button">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

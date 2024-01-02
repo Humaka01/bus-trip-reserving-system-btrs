@@ -35,7 +35,7 @@ body {
     position: relative;
 }
 
-#booking-title, #bus-details-title {
+#booking-title, #bus-details-title, #trip-details-title {
     font-size: 34px;
     font-weight: bold;
     color: #4d3612;
@@ -335,7 +335,7 @@ body {
         transform: scale(1.015);
     }
 
-.card-title, h2.booking-header {
+.card-title, h2.booking-header, .trip-details dl.row, dt.col-sm-2 {
     color: #3b260d;
 }
 
@@ -343,16 +343,21 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.card-text {
+.card-text, .trip-details dl.row, dt.col-sm-2 {
     color: #3b260d;
 }
 
-.trip-card h5.card-title {
-    font-size: 24px;
+dd.col-sm-10 {
+    color: #926023;
     font-weight: bold;
-    color: #8b735b;
-    margin-top: 10px;
 }
+
+    .trip-card h5.card-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #8b735b;
+        margin-top: 10px;
+    }
 
     .trip-card p.card-text {
         font-size: 16px;
@@ -443,4 +448,49 @@ body {
 .button-group {
     display: flex;
     align-items: center;
+}
+
+.table {
+    background-color: rgba(201, 204, 194, 0.8); /* Sandy background color with opacity */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+    /* Style the table headers */
+    .table th {
+        background-color: #8b735b; /* Sandy button color */
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Style the table rows */
+    .table tbody tr {
+        background-color: rgba(255, 255, 255, 0.9); /* Light background color */
+    }
+
+    .table td a {
+        color: #8b735b; /* Sandy link color */
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 10px;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+        .table td a:hover {
+            color: #7a654d; /* Slightly darker link color on hover */
+            transform: scale(1.05);
+        }
+
+.trip-details {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background color with opacity */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.trip-actions {
+    margin-top: 10px;
 }
