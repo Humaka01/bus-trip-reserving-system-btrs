@@ -24,7 +24,6 @@ BTRS is a university project developed for the ASP\.NET course at Applied Scienc
 
 - [/BTRS](/BTRS): ASP\.NET Core MVC Project
 - [/docs](/docs): Project documentation, including the PowerPoint presentation.
-- [/database](/docs): SQL Server database scripts.
 
 ## Getting Started
 
