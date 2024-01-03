@@ -1,7 +1,7 @@
 ﻿@model BTRS.Models.Passenger;
 
 
-<div class="container">
+<div class="container sign-up-form">
     <h1>Sign Up</h1>
 
     <form asp-action="SignUp" method="post">
@@ -38,7 +38,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">SignUp</button>
+        <button type="submit" class="btn btn-secondary" style="margin-top: 15px">SignUp</button>
     </form>
 </div>
 @TempData["Msg"]
